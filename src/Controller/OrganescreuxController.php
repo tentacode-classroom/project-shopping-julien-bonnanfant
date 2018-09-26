@@ -12,7 +12,7 @@ class OrganescreuxController extends AbstractController
      */
     public function index()
     {
-        return $this->render('organescreux/index.html.twig', [
+        return $this->render('organescreux/Homepage.html.twig', [
             'controller_name' => 'OrganescreuxController',
         ]);
     }

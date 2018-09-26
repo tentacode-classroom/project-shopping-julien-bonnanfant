@@ -3,7 +3,9 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use function Symfony\Component\DependencyInjection\Tests\Fixtures\factoryFunction;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\OrganRepository;
 
 class HomepageController extends AbstractController
 {
@@ -12,10 +14,17 @@ class HomepageController extends AbstractController
      */
     public function index()
     {
-        return $this->render('homepage/index.html.twig', [
-            'controller_name' => 'HomepageController',
-            'tittle' => "Bienvenu sur OrganSales"
+
+        $organRepository = new OrganRepository();
+        $organs = $organRepository->findAll();
+
+
+        return $this->render('Homepage.html.twig', [
+            'controller_name'   => 'HomepageController',
+            'tittle'            => "Bienvenu sur OrganSales",
+            'products'          => $organs
         ]);
     }
+
 
 }

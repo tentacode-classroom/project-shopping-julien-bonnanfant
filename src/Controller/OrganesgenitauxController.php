@@ -12,7 +12,7 @@ class OrganesgenitauxController extends AbstractController
      */
     public function index()
     {
-        return $this->render('organesgenitaux/index.html.twig', [
+        return $this->render('organesgenitaux/Homepage.html.twig', [
             'controller_name' => 'OrganesgenitauxController',
         ]);
     }

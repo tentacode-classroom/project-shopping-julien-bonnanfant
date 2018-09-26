@@ -12,7 +12,7 @@ class OrganeslimphoiquesController extends AbstractController
      */
     public function index()
     {
-        return $this->render('organeslimphoiques/index.html.twig', [
+        return $this->render('organeslimphoiques/Homepage.html.twig', [
             'controller_name' => 'OrganeslimphoiquesController',
         ]);
     }

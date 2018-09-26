@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <ul>
+        {% for organ in products %}
+            <li>
+                <span>{{ organ.name }}</span>
+            </li>
+
+        {% endfor %}
+    </ul>
+
+{% endblock %}
