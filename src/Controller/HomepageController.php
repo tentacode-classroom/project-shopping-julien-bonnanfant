@@ -20,7 +20,6 @@ class HomepageController extends AbstractController
 
 
         return $this->render('Homepage.html.twig', [
-            'controller_name'   => 'HomepageController',
             'tittle'            => "Bienvenu sur OrganSales",
             'products'          => $organs
         ]);

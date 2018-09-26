@@ -4,22 +4,23 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
+use App\Entity\OrganRepository;
 
 class ProductController extends AbstractController
 {
     /**
-     * @Route("/product/123", name="product")
+     * @Route("/product/{productId}", name="product")
      */
-    public function index()
+    public function index($productId = null)
     {
 
 
 
         $organRepository = new OrganRepository();
-        $organ = $organRepository->findOneById($productId);
+        $organ = $organRepository->findOneById( (int) $productId);
 
-        return $this->render('product/Homepage.html.twig', [
-            'controller_name' => 'ProductController',
+        return $this->render('product.html.twig', [
+            'product'=> $organ
         ]);
     }
 }
