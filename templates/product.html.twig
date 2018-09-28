@@ -4,6 +4,13 @@
 
 {% block body %}
 
-    <img src="{{ product.picture }}" alt="photo de {{ product.name }}">
+    <div class="jumbotron" style="margin: 10px;">
+        <h1 class="display-3">{{ product.name }}</h1>
+        <p class="lead"></p>
+        <hr class="my-4">
+
+        <img src="{{ product.picture }}" alt="photo de {{ product.name }}">
+    </div>
+
 
 {% endblock %}

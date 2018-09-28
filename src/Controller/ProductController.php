@@ -4,7 +4,7 @@ namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Entity\OrganRepository;
+use App\Entity\Organ;
 
 class ProductController extends AbstractController
 {
@@ -16,11 +16,12 @@ class ProductController extends AbstractController
 
 
 
-        $organRepository = new OrganRepository();
-        $organ = $organRepository->findOneById( (int) $productId);
+        $product = $this->getDoctrine()
+            ->getRepository(Organ::class)
+            ->find($productId);
 
         return $this->render('product.html.twig', [
-            'product'=> $organ
+            'product'=> $product
         ]);
     }
 }
