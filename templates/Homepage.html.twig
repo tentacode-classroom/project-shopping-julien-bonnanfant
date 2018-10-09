@@ -6,7 +6,7 @@
     <h1 class="display-3">Bienvenue sur OrganeSales</h1>
     <p class="lead">Besoin de renouveau, pourquoi ne pas essayer</p>
     <hr class="my-4">
-    <p>Organsales, c'est plus de 20 ans de trafic d'organes, avec comme seul mot d'ordre la qualitée avant tout.
+    <p>Organ sales, c'est plus de 20 ans de trafic d'organes, avec comme seul mot d'ordre la qualitée avant tout.
         Retrouvez une trés larges gamme d'organes, un paiments secrurisée et une livraison en moins de 48h dans un camion frigorifique. <br>
         Nos humains sont élevé en pleine air dans des fermes du canada. Nous disposons des labels OAC CCP et AC (Appelation d'origine contôlée,
         Certification de conformitée du produit et Agriculture biologiques) Le tout certifier sans hormones de croissance ni antibiotique.</p>
@@ -14,19 +14,28 @@
 
     </div>
 
-    <ul>
+    <div class="row">
+
         {% for organ in products %}
-            <li>
-                <a href="{{ path('product',{'productId': organ.id }) }}">
-                    <p>{{ organ.name }}</p>
-                </a>
-                <p>{{ organ.price }} €</p>
+
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <a href="{{ path('product',{'productId': organ.id }) }}">
+                        <img class="card-img-top" src="{{ organ.picture }}" alt="Card image cap">
+                    <h5 class="card-title">{{ organ.name }}</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{ organ.price }} €  {{ organ.provenance }}</h6>
+                    <p class="card-text"></p>
 
 
-            </li>
+
+
+                </div>
+            </div>
+
+
 
 
         {% endfor %}
-    </ul>
+    </div>
 
 {% endblock %}

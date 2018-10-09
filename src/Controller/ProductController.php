@@ -18,7 +18,7 @@ class ProductController extends AbstractController
 
         $product = $this->getDoctrine()
             ->getRepository(Organ::class)
-            ->find($productId);
+            ->findAll();
 
         return $this->render('product.html.twig', [
             'product'=> $product

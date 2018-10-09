@@ -18,7 +18,7 @@ class HomepageController extends AbstractController
 
         $product = $this->getDoctrine()
             ->getRepository(Organ::class)
-            ->findall();
+            ->findAll();
 
 
 

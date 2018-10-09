@@ -9,7 +9,7 @@ use Symfony\Bridge\Doctrine\RegistryInterface;
 /**
  * @method Organ|null find($id, $lockMode = null, $lockVersion = null)
  * @method Organ|null findOneBy(array $criteria, array $orderBy = null)
- * @method Organ[]    findAll()
+
  * @method Organ[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
 class OrganRepository extends ServiceEntityRepository
@@ -22,22 +22,20 @@ class OrganRepository extends ServiceEntityRepository
 //    /**
 //     * @return Organ[] Returns an array of Organ objects
 //     */
-    /*
-    public function findByExampleField($value)
+
+    public function findAll()
     {
         return $this->createQueryBuilder('o')
-            ->andWhere('o.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('o.id', 'ASC')
+            ->orderBy('o.price', 'ASC')
             ->setMaxResults(10)
             ->getQuery()
-            ->getResult()
-        ;
+            ->getResult();
     }
-    */
 
-    /*
-    public function findOneBySomeField($value): ?Organ
+
+
+
+    /*public function findOneBySomeField($value): ?Organ
     {
         return $this->createQueryBuilder('o')
             ->andWhere('o.exampleField = :val')

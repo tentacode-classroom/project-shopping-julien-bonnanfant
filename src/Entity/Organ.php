@@ -41,6 +41,16 @@ class Organ
      */
     private $Provenance;
 
+    /**
+     * @ORM\Column(type="integer")
+     */
+    private $ViewController;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $viewCounter;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -105,4 +115,17 @@ class Organ
 
         return $this;
     }
+
+    public function getViewCounter(): ?int
+    {
+        return $this->viewCounter;
+    }
+
+    public function setViewCounter(?int $viewCounter): self
+    {
+        $this->viewCounter = $viewCounter;
+
+        return $this;
+    }
+
 }
