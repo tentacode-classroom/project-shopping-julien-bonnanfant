@@ -20,7 +20,7 @@ class ProductController extends AbstractController
             ->getRepository(Organ::class)
             ->findAll();
 
-        return $this->render('product.html.twig', [
+        return $this->render('product/product.html.twig', [
             'product'=> $product
         ]);
     }

@@ -4,6 +4,9 @@ namespace App\DataFixtures;
 
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Common\Persistence\ObjectManager;
+use App\Entity\Category;
+use App\Entity\Organ;
+
 
 class OrganFixtures extends Fixture
 {
